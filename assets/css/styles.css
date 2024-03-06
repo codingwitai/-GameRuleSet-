@@ -4,19 +4,34 @@ body {
     font-family: Arial, sans-serif;
 }
 
-h1 {
-    color: #333;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-#attributes {
-    margin-top: 20px;
-}
-
-#attributes div {
+.attribute {
     margin-bottom: 10px;
 }
 
-#attributes ul {
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill-name {
+    font-weight: bold;
+}
+
+.sub-skill-list {
     margin-top: 5px;
     margin-left: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-input {
+    margin-bottom: 10px;
 }
