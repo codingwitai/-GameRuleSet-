@@ -1,0 +1,2 @@
+# -GameRuleSet-
+solidity 
