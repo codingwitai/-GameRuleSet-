@@ -1,0 +1,22 @@
+/* GameRuleSet/assets/css/style.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+}
+
+#attributes {
+    margin-top: 20px;
+}
+
+#attributes div {
+    margin-bottom: 10px;
+}
+
+#attributes ul {
+    margin-top: 5px;
+    margin-left: 20px;
+}
