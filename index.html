@@ -5,16 +5,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attribute Example</title>
+    <title>Character Creation</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <h1>Attributes, Skills, and Derived Statistics</h1>
-    <div id="attributes"></div>
+    <h1>Character Creation</h1>
 
-    <script type="module" src="main.js"></script>
-    <script type="module">
-        import { displayAttributesSkillsAndDerivedStats } from './main.js';
-        displayAttributesSkillsAndDerivedStats();
-    </script>
+    <div id="attributes">
+        <h2>Attributes</h2>
+        <label for="strength">Strength:</label>
+        <input type="number" id="strength" min="1" max="100" value="50">
+        <button onclick="rollDice('strength')">Roll</button><br>
+        <label for="agility">Agility:</label>
+        <input type="number" id="agility" min="1" max="100" value="50">
+        <button onclick="rollDice('agility')">Roll</button><br>
+        <label for="intelligence">Intelligence:</label>
+        <input type="number" id="intelligence" min="1" max="100" value="50">
+        <button onclick="rollDice('intelligence')">Roll</button><br>
+        <label for="constitution">Constitution:</label>
+        <input type="number" id="constitution" min="1" max="100" value="50">
+        <button onclick="rollDice('constitution')">Roll</button><br>
+    </div>
+
+    <div id="skills">
+        <h2>Skills</h2>
+        <input type="checkbox" id="meleeCombat" name="skill" value="Melee Combat">
+        <label for="meleeCombat">Melee Combat</label><br>
+        <input type="checkbox" id="stealth" name="skill" value="Stealth">
+        <label for="stealth">Stealth</label><br>
+        <!-- Add more skills as needed -->
+    </div>
+
+    <button id="createCharacterButton">Create Character</button>
+
+    <script type="module" src="assets/js/main.js"></script>
 </body>
 </html>

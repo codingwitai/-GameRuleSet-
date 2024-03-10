@@ -1,61 +1,54 @@
 // main.js
 
 import { Attribute } from './attribute.js';
-import { Skill, SubSkill } from './skills.js';
+import { calculateDerivedStatistics } from './derivedStatistics.js';
 
-// Create attributes
-const strength = new Attribute("Strength", 50);
-const agility = new Attribute("Agility", 60);
-const intelligence = new Attribute("Intelligence", 70);
-const constitution = new Attribute("Constitution", 80); // Adding Constitution attribute
-
-// Create skills and sub-skills
-const meleeCombat = new Skill("Melee Combat");
-const swordsmanship = new SubSkill("Swordsmanship");
-const axemanship = new SubSkill("Axemanship");
-
-meleeCombat.addSubSkill(swordsmanship);
-meleeCombat.addSubSkill(axemanship);
-
-const stealth = new Skill("Stealth");
-const crafting = new Skill("Crafting");
-
-// Display attributes, skills, and derived statistics
-const attributesDiv = document.getElementById("attributes");
-
-function displayAttribute(attribute) {
-    const attributeElement = document.createElement("div");
-    attributeElement.innerHTML = `<strong>${attribute.name}:</strong> <span id="${attribute.name.toLowerCase()}Value">${attribute.value}</span>`;
-    attributesDiv.appendChild(attributeElement);
+// Function to roll a dice
+function rollDice(attribute) {
+    const diceResult = Math.floor(Math.random() * 100) + 1; // Roll a d100
+    document.getElementById(attribute).value = diceResult;
 }
 
-function displaySkills(skill) {
-    const skillElement = document.createElement("div");
-    skillElement.innerHTML = `<strong>${skill.name}:</strong>`;
-    attributesDiv.appendChild(skillElement);
+// Function to create a character based on user inputs
+function createCharacter() {
+    // Retrieve attribute values from user inputs
+    const strengthValue = parseInt(document.getElementById("strength").value);
+    const agilityValue = parseInt(document.getElementById("agility").value);
+    const intelligenceValue = parseInt(document.getElementById("intelligence").value);
+    const constitutionValue = parseInt(document.getElementById("constitution").value);
 
-    if (skill.subSkills.length > 0) {
-        const subSkillsList = document.createElement("ul");
-        skill.subSkills.forEach(subSkill => {
-            const subSkillItem = document.createElement("li");
-            subSkillItem.textContent = subSkill.name;
-            subSkillsList.appendChild(subSkillItem);
-        });
-        skillElement.appendChild(subSkillsList);
-    }
-}
+    // Create attribute objects
+    const strength = new Attribute("Strength", strengthValue);
+    const agility = new Attribute("Agility", agilityValue);
+    const intelligence = new Attribute("Intelligence", intelligenceValue);
+    const constitution = new Attribute("Constitution", constitutionValue);
 
-export function displayAttributesSkillsAndDerivedStats() {
-    displayAttribute(strength);
-    displayAttribute(agility);
-    displayAttribute(intelligence);
-    displayAttribute(constitution); // Displaying the Constitution attribute
+    // Retrieve selected skills
+    const selectedSkills = [];
+    const skillsCheckboxes = document.getElementsByName("skill");
+    skillsCheckboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            selectedSkills.push(checkbox.value);
+        }
+    });
 
-    displaySkills(meleeCombat);
-    displaySkills(stealth);
-    displaySkills(crafting);
+    // Calculate derived statistics
+    const derivedStatistics = calculateDerivedStatistics([strength, agility, intelligence, constitution], selectedSkills);
 
-    // Calculate and display derived statistics (not shown here)
+    // Display character attributes, selected skills, and derived statistics (for demonstration)
+    console.log("Character Attributes:");
+    console.log(strength);
+    console.log(agility);
+    console.log(intelligence);
+    console.log(constitution);
+
+    console.log("Selected Skills:");
+    console.log(selectedSkills);
+
+    console.log("Derived Statistics:");
+    derivedStatistics.forEach(statistic => {
+        console.log(`${statistic.name}: ${statistic.value}`);
+    });
 }
 
 // Update attribute values
@@ -77,3 +70,6 @@ form.addEventListener("submit", function(event) {
 
     // Update displayed derived statistics (not shown here)
 });
+
+// Export the createCharacter function to make it accessible to other modules
+export { createCharacter };
