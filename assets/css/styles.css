@@ -1,37 +1,78 @@
-/* GameRuleSet/assets/css/style.css */
-
+/* General styles */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
 }
 
-.attribute {
-    margin-bottom: 10px;
-}
-
-.skill {
+/* Header styles */
+.header {
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.skill-name {
-    font-weight: bold;
+/* Attribute form styles */
+.attribute-form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.sub-skill-list {
-    margin-top: 5px;
-    margin-left: 20px;
-}
-
-.form-label {
+.attribute-form label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
-.form-input {
+.attribute-form input[type="number"] {
+    width: calc(100% - 12px);
     margin-bottom: 10px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.attribute-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Character details styles */
+.character-details {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.character-details p {
+    margin-bottom: 10px;
+}
+
+/* Create character button styles */
+.create-character-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.create-character-button:hover {
+    background-color: #0056b3;
 }

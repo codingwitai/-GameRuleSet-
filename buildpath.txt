@@ -1,0 +1,15 @@
+Attributes: Create a class or structure to represent attributes, each with a value ranging from 1 to 100. These attributes should be broad concepts like Strength, Dexterity, Intelligence, etc.
+
+Derived Statistics: Design a system to calculate derived statistics based on attributes. These could include things like Health Points (based on Constitution), Attack Power (based on Strength), etc.
+
+Skills: Implement a system for skills, where each skill has a general name (e.g., Melee Combat, Stealth, Crafting) and can be specialized further (e.g., Melee Combat -> Swordsmanship, Axemanship).
+
+Specialties: Allow players to choose specialties within skills to further customize their characters. This could include things like a specific fighting style (e.g., Two-Handed Swordsman) or a particular area of expertise (e.g., Master Blacksmith).
+
+Effects (FX): Introduce effects for special abilities, racial traits, magic spells, etc. These effects can modify attributes, derived statistics, skills, or grant unique abilities.
+
+Skill Tests: Implement a mechanism for skill tests where the player's attribute points, skill points, and specialty points are combined with modifiers to determine the skill value. Then, depending on the type of test (static or opposed), the player rolls a d100 and compares the result to the skill value.
+
+For static tests, the player aims to roll below their skill value.
+For opposed tests, the player aims to roll higher than the opposing roll or target number.
+Finally, incorporate a system to calculate the degree of success or failure based on the margin between the result and the target number.

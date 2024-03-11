@@ -1,6 +1,6 @@
 // skills.js
 
-export class Skill {
+class Skill {
     constructor(name) {
         this.name = name;
         this.subSkills = [];
@@ -11,8 +11,18 @@ export class Skill {
     }
 }
 
-export class SubSkill {
+class SubSkill {
     constructor(name) {
         this.name = name;
     }
 }
+
+class Specialty {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+// Export the Skill, SubSkill, and Specialty classes
+export { Skill, Specialty, SubSkill };
+
