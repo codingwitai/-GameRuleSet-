@@ -1,12 +1,24 @@
-/* character/attributes.css */
-.attribute {
+/* attributes.css */
+
+/* Style for the basic attributes list */
+.basic-attributes {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Style for each attribute item */
+  .basic-attributes-item {
     margin-bottom: 10px;
-}
-
-.attribute label {
+  }
+  
+  /* Style for attribute name */
+  .attribute-name {
     font-weight: bold;
-}
-
-.attribute input[type="number"] {
-    width: 50px;
-}
+  }
+  
+  /* Style for attribute value */
+  .attribute-value {
+    margin-left: 10px;
+    font-style: italic;
+  }
+  

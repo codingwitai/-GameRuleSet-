@@ -1,21 +1,51 @@
-DmMode- 
-God mode
-decide pass fail
-scale fuckery
-controle to negate randomness of encounter
-dungon generator 
-drop menu
-
-
-
-set up Loot drops to each player
-lock loot to campaign 
-
-instance based voice chat 
-can mute any/all
- 
-quick play mode 
-set premades of each type
-
-item generator 
-
+GameRuleSet/
+│
+├── assets/                      # Folder for static assets (CSS and JavaScript files)
+│   ├── css/                     # Folder for CSS files
+│   │   ├── attribute.css        # Attribute CSS file
+│   │   ├── character_sheet.css  # Character sheet CSS file
+│   │   ├── combat.css           # Combat CSS file
+│   │   ├── instance_creator.css # Instance Creator CSS file
+│   │   ├── instance_manager.css # Instance Manager CSS file
+│   │   ├── inventory.css        # Inventory CSS file
+│   │   ├── skills.css           # Skills CSS file
+│   │   └── villain_attributes.css # Villain attributes CSS file
+│   └── js/                      # Folder for JavaScript files
+│       ├── attributes.js        # Attributes module
+│       ├── derived_statistics.js# Derived statistics module
+│       ├── skills.js            # Skills module
+│       ├── specialties.js       # Specialties module
+│       ├── effects.js           # Effects (FX) module
+│       ├── skill_tests.js       # Skill tests module
+│       └── GameRuleSet.js       # Main module integrating all core mechanics
+│
+├── game_master/                 # Folder for files related to the game master
+│   ├── non_player_characters/   # Folder for non-player character files
+│   │   ├── npc1.json            # Non-player character 1 data
+│   │   ├── npc2.json            # Non-player character 2 data
+│   │   └── ...                  # Additional non-player character files
+│   ├── story_narration.txt      # Text file for story narration
+│   └── adjudication_rules.txt   # Text file for adjudication rules
+│
+├── player/                      # Folder for files related to the players
+│   ├── character_sheets/        # Folder for player character sheets
+│   │   ├── player1_sheet.json   # Player 1 character sheet data
+│   │   ├── player2_sheet.json   # Player 2 character sheet data
+│   │   └── ...                  # Additional player character sheet files
+│   ├── decisions_actions.txt    # Text file for player decisions and actions
+│   └── dice_rolls.txt           # Text file for dice rolls and outcomes
+│
+├── setting/                     # Folder for files related to the game setting
+│   ├── locations/               # Folder for location descriptions and data
+│   │   ├── location1.txt        # Description of location 1
+│   │   ├── location2.txt        # Description of location 2
+│   │   └── ...                  # Additional location description files
+│   ├── characters/              # Folder for character descriptions and data
+│   │   ├── character1.json      # Data for character 1
+│   │   ├── character2.json      # Data for character 2
+│   │   └── ...                  # Additional character data files
+│   └── lore.txt                 # Text file for setting lore
+│
+├── index.html                   # HTML document
+│
+└── README.md                    # Project documentation

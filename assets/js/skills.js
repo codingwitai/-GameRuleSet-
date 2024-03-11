@@ -1,0 +1,185 @@
+// skills.js
+
+// Function to calculate skill points based on the number of basic attributes
+function calculateSkillPoints(strength, dexterity, constitution, intelligence, wisdom, charisma, magic, numberOfSkills) {
+    // Calculate the multiplier for skill points
+    const multiplier = calculateMultiplier(numberOfSkills, strength, dexterity, constitution, intelligence, wisdom, charisma, magic);
+
+    // Calculate the total number of skill points
+    const totalSkillPoints = Math.round((strength + dexterity + constitution + intelligence + wisdom + charisma + magic) * multiplier);
+
+    return totalSkillPoints;
+}
+
+// Function to calculate the multiplier for skill points
+function calculateMultiplier(numberOfSkills, strength, dexterity, constitution, intelligence, wisdom, charisma, magic) {
+    const totalAttributes = strength + dexterity + constitution + intelligence + wisdom + charisma + magic;
+    const multiplier = numberOfSkills / totalAttributes;
+
+    if (multiplier > 0.5) {
+        return multiplier;
+    } else {
+        return 1 / multiplier;
+    }
+}
+
+// List of skills with specialties and FX
+const skills = [
+    {
+        name: 'Animal Handling',
+        description: 'Represents your ability to tame, ride, and herd animals.',
+        attributes: ['Dexterity', 'Charisma'],
+        specialties: ['Taming', 'Riding', 'Herding', 'Training', 'Breeding'],
+        fx: ['Special techniques for handling animals', 'Language learning: Animal languages', 'Social standing modifiers: Animal-related connections']
+    },
+    {
+        name: 'Area Knowledge',
+        description: 'Represents your knowledge of a specific geographic area.',
+        attributes: ['Intelligence'],
+        specialties: ['By Nation', 'By Province/State/Territory', 'By County or City', 'By Village, Town, or City Block'],
+        fx: ['Special techniques for navigating the area', 'Language learning: Local dialects', 'Social standing modifiers: Local connections']
+    },
+    {
+        name: 'Athletics',
+        description: 'Catch-all skill mostly covering movement.',
+        attributes: ['Strength', 'Dexterity', 'Constitution'],
+        specialties: ['Acrobatics', 'Climbing', 'Marching', 'Sprint'],
+        fx: ['Special techniques for athletic maneuvers', 'Language learning: Sign language for athletes', 'Social standing modifiers: Athletic fame']
+    },
+    {
+        name: 'Awareness',
+        description: 'Represents your awareness of your surroundings and magical awareness.',
+        attributes: ['Wisdom', 'Magic'],
+        specialties: ['Sight', 'Sound', 'Smell', 'Taste', 'Touch', 'Magic'],
+        fx: ['Enhanced perception abilities', 'Language learning: Magical incantations', 'Social standing modifiers: Magical community connections']
+    },
+    {
+        name: 'Crafting',
+        description: 'Represents your ability to make stuff and use tools.',
+        attributes: ['Intelligence'],
+        specialties: ['By Material Science and/or Finished Product'],
+        fx: ['Special techniques for crafting and tool usage', 'Language learning: Technical jargon', 'Social standing modifiers: Craftsmanship reputation']
+    },
+    {
+        name: 'Dodge',
+        description: 'Represents your ability to avoid attacks.',
+        attributes: ['Dexterity'],
+        specialties: ['Melee', 'Ranged'],
+        fx: ['Special techniques for evasive maneuvers', 'Language learning: Combat terminology', 'Social standing modifiers: Reputation as a nimble combatant']
+    },
+    {
+        name: 'Drive/Pilot',
+        description: 'Represents your ability to operate motorized vehicles.',
+        attributes: ['Dexterity', 'Intelligence'],
+        specialties: ['Air', 'Ground', 'Surface Ocean', 'Submarine', 'Space'],
+        fx: ['Special techniques for vehicle operation', 'Language learning: Vehicle-specific jargon', 'Social standing modifiers: Reputation as a skilled driver/pilot']
+    },
+    {
+        name: 'Gambling',
+        description: 'Represents your ability to win at games of skill and chance.',
+        attributes: ['Charisma', 'Intelligence'],
+        specialties: ['By Game'],
+        fx: ['Special techniques for gambling strategies', 'Language learning: Gambling slang', 'Social standing modifiers: Reputation as a skilled gambler']
+    },
+    {
+        name: 'Expert',
+        description: 'Represents an understanding of a type of science or technical skill that does not fit well within another category.',
+        attributes: ['Intelligence'],
+        specialties: ['By Broad Science'],
+        fx: ['Special techniques for specialized knowledge', 'Language learning: Technical terminology', 'Social standing modifiers: Reputation as an expert in a field']
+    },
+    {
+        name: 'Linguistics',
+        description: 'Represents your skill in understanding languages in general.',
+        attributes: ['Intelligence'],
+        specialties: ['By Language Families'],
+        fx: ['Special techniques for language acquisition', 'Language learning: Linguistic analysis', 'Social standing modifiers: Reputation as a polyglot']
+    },
+    {
+        name: 'Lore',
+        description: 'Represents certain knowledge that isn’t easily quantified elsewhere.',
+        attributes: ['Intelligence', 'Wisdom', 'Charisma'],
+        specialties: ['By Broad Knowledge'],
+        fx: ['Special techniques for gaining and retaining knowledge', 'Language learning: Ancient scripts', 'Social standing modifiers: Reputation as a sage']
+    },
+    {
+        name: 'Navigation',
+        description: 'Represents your skill at finding your way places.',
+        attributes: ['Intelligence'],
+        specialties: ['Landmark Use', 'Compass', 'Stellar', 'Solar', 'Cartography'],
+        fx: ['Special techniques for navigation', 'Language learning: Navigation terminology', 'Social standing modifiers: Reputation as a skilled navigator']
+    },
+    {
+        name: 'Negotiation',
+        description: 'Represents your ability to negotiate or arbitrate a deal.',
+        attributes: ['Charisma', 'Intelligence'],
+        specialties: ['Barter/Trade', 'Contract Negotiation', 'Arbitration', 'Adversarial Adjudication'],
+        fx: ['Special techniques for negotiation tactics', 'Language learning: Legal jargon', 'Social standing modifiers: Reputation as a skilled negotiator']
+    },
+    {
+        name: 'Occultism',
+        description: 'Represents the scholastic study and documentation of magical and supernatural phenomena.',
+        attributes: ['Intelligence'],
+        specialties: ['Magic', 'Supernatural Locations', 'Supernatural Objects', 'Supernatural Beings', 'Supernatural Meteorology', 'Planar Cosmology'],
+        fx: ['Special techniques for occult research', 'Language learning: Arcane languages', 'Social standing modifiers: Reputation as an occult scholar']
+    },
+    {
+        name: 'Parry',
+        description: 'Represents your ability to use your weapon, a shield, or the environment to deflect incoming attacks.',
+        attributes: ['Dexterity', 'Intelligence'],
+        specialties: ['Weapon', 'Shield', 'Environment'],
+        fx: ['Special techniques for defensive maneuvers', 'Language learning: Combat terminology', 'Social standing modifiers: Reputation as a skilled duelist']
+    },
+    {
+        name: 'Search',
+        description: 'Represents your ability to discover objects, clues, evidence, and traps.',
+        attributes: ['Intelligence'],
+        specialties: ['Trapfinding', 'Location', 'Personal', 'Vehicle'],
+        fx: ['Special techniques for investigation', 'Language learning: Investigative terminology', 'Social standing modifiers: Reputation as a skilled investigator']
+    },
+    {
+        name: 'Stealth',
+        description: 'Represents your ability to stay quiet, unseen, and leave no traces.',
+        attributes: ['Dexterity', 'Intelligence'],
+        specialties: ['Hide', 'Move Silently', 'Conceal Passage', 'Camouflage'],
+        fx: ['Special techniques for stealthy movement', 'Language learning: Rogue slang', 'Social standing modifiers: Reputation as a shadowy figure']
+    },
+    {
+        name: 'Social Interaction',
+        description: 'Represents your ability to communicate with others.',
+        attributes: ['Charisma', 'Intelligence', 'Wisdom'],
+        specialties: ['Bluff', 'Intimidation', 'Interrogation', 'Small Talk', 'Diplomacy', 'Nonverbal Communication', 'Nonverbal Cues', 'Verbal Cues'],
+        fx: ['Special techniques for social manipulation', 'Language learning: Social cues', 'Social standing modifiers: Reputation as a charismatic figure']
+    },
+    {
+        name: 'Spellcraft',
+        description: 'Represents your ability to manipulate Mana to create magical effects.',
+        attributes: ['Magic'],
+        specialties: ['By School'],
+        fx: ['Special techniques for spellcasting', 'Language learning: Magical incantations', 'Social standing modifiers: Reputation as a powerful mage']
+    },
+    {
+        name: 'Strike',
+        description: 'Represents your ability to hit with your fists or a melee weapon.',
+        attributes: ['Dexterity'],
+        specialties: ['Unarmed', 'By Weapon Type'],
+        fx: ['Special techniques for striking', 'Language learning: Combat terminology', 'Social standing modifiers: Reputation as a skilled fighter']
+    },
+    {
+        name: 'Targeting',
+        description: 'Represents your ability to accurately place an object you propel by any method other than a throw.',
+        attributes: ['Dexterity'],
+        specialties: ['By Weapon Type'],
+        fx: ['Special techniques for targeting', 'Language learning: Weapon terminology', 'Social standing modifiers: Reputation as a sharpshooter']
+    },
+    {
+        name: 'Throwing',
+        description: 'Represents your ability to accurately place an object you propel only by throwing action.',
+        attributes: ['Dexterity'],
+        specialties: ['By Weapon Type'],
+        fx: ['Special techniques for throwing', 'Language learning: Throwing jargon', 'Social standing modifiers: Reputation as a skilled thrower']
+    }
+];
+
+// Export the functions and skills list to make them accessible to other modules
+export { calculateSkillPoints, skills };
