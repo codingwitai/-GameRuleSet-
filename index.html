@@ -4,68 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Project</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/attribute.css">
-    <link rel="stylesheet" href="assets/css/skills.css">
-    <link rel="stylesheet" href="assets/css/instance_creator.css">
-    <link rel="stylesheet" href="assets/css/villain_attributes.css">
+    <style>
+        /* CSS for each section */
+        #characterAttributesCSS,
+        #updateAttributesCSS,
+        #characterSheetCSS,
+        #skillsCSS {
+            display: none; /* Hide by default */
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>Game Project</h1>
-            <nav class="navbar">
-                <a href="#">Home</a>
-                <a href="#">Characters</a>
-                <a href="#">Skills</a>
-                <a href="#">Combat</a>
-                <a href="#">Inventory</a>
-                <a href="#">Instance Manager</a>
-                <a href="#">Instance Creator</a>
-                <a href="#">Villain Attributes</a>
-            </nav>
-        </header>
+    <h1>Game Project</h1>
+    <nav>
+        <!-- Navigation links -->
+        <ul>
+            <li><a href="#" id="homeLink">Home</a></li>
+            <li><a href="#" id="characterAttributesLink">Character Attributes</a></li>
+            <li><a href="#" id="updateAttributesLink">Update Attributes</a></li>
+            <li><a href="#" id="characterSheetLink">Character Sheet</a></li>
+            <li><a href="#" id="skillsLink">Skills</a></li>
+            <!-- Add more navigation links as needed -->
+        </ul>
+    </nav>
 
-        <section class="character-attributes">
-            <!-- Character attributes form -->
-            <h2>Character Attributes</h2>
-            <form id="attributeForm" class="attribute-form">
-                <!-- Input fields for character attributes -->
-                <label for="strengthInput">Strength:</label>
-                <input type="number" id="strengthInput" name="strengthInput">
-                <br>
-                <!-- Repeat for other attributes -->
-                <button type="submit">Update Attributes</button>
-            </form>
-        </section>
-
-        <section class="character-sheet">
-            <!-- Character sheet display -->
-            <h2>Character Sheet</h2>
-            <div id="characterSheet" class="character-details">
-                <!-- Placeholder for character details -->
-            </div>
-        </section>
-
-        <section class="skills">
-            <!-- Skills display -->
-            <h2>Skills</h2>
-            <div id="skillsList" class="skills-list">
-                <!-- Placeholder for skills -->
-            </div>
-        </section>
-
-        <!-- Add more sections for other components as needed -->
-
+    <!-- CSS content for each section -->
+    <div id="characterAttributesCSS">
+        <h2>Character Attributes CSS</h2>
+        <p>Add your CSS content for character attributes here.</p>
     </div>
 
-    <!-- JavaScript files -->
-    <script type="module" src="assets/js/attribute.js"></script>
-    <script type="module" src="assets/js/character_sheet.js"></script>
-    <script type="module" src="assets/js/createCharacterButton.js"></script>
-    <script type="module" src="assets/js/derivedStatistics.js"></script>
-    <script type="module" src="assets/js/main.js"></script>
-    <!-- Include additional JavaScript files for other components -->
+    <div id="updateAttributesCSS">
+        <h2>Update Attributes CSS</h2>
+        <p>Add your CSS content for updating attributes here.</p>
+    </div>
 
+    <div id="characterSheetCSS">
+        <h2>Character Sheet CSS</h2>
+        <p>Add your CSS content for character sheet here.</p>
+    </div>
+
+    <div id="skillsCSS">
+        <h2>Skills CSS</h2>
+        <p>Add your CSS content for skills here.</p>
+    </div>
+
+    <!-- JavaScript to handle click events -->
+    <script>
+        // Get references to the links and sections
+        const characterAttributesLink = document.getElementById('characterAttributesLink');
+        const updateAttributesLink = document.getElementById('updateAttributesLink');
+        const characterSheetLink = document.getElementById('characterSheetLink');
+        const skillsLink = document.getElementById('skillsLink');
+
+        const characterAttributesSection = document.getElementById('characterAttributesCSS');
+        const updateAttributesSection = document.getElementById('updateAttributesCSS');
+        const characterSheetSection = document.getElementById('characterSheetCSS');
+        const skillsSection = document.getElementById('skillsCSS');
+
+        // Add click event listeners to the links
+        characterAttributesLink.addEventListener('click', () => {
+            scrollToSection(characterAttributesSection);
+        });
+
+        updateAttributesLink.addEventListener('click', () => {
+            scrollToSection(updateAttributesSection);
+        });
+
+        characterSheetLink.addEventListener('click', () => {
+            scrollToSection(characterSheetSection);
+        });
+
+        skillsLink.addEventListener('click', () => {
+            scrollToSection(skillsSection);
+        });
+
+        // Function to scroll to a section
+        function scrollToSection(section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
