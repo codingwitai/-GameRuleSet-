@@ -26,7 +26,53 @@
             <button type="submit">Update Attributes</button>
         </form>
 
-        <div id="characterDetails" class="character-details"></div>
+        <div id="characterDetails" class="character-details">
+            <h2>Character Details</h2>
+            
+            <!-- Demographics -->
+            <h3>Demographics</h3>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age">
+            <!-- Add more fields for Sex/Gender, Ethnicity, Occupation, etc. -->
+
+            <!-- Physical Appearance -->
+            <h3>Physical Appearance</h3>
+            <label for="eyeColor">Eye color:</label>
+            <input type="text" id="eyeColor" name="eyeColor">
+            <!-- Add more fields for Skin color, Hair color, Height, etc. -->
+
+            <!-- History -->
+            <h3>History</h3>
+            <label for="birthDate">Birth date:</label>
+            <input type="text" id="birthDate" name="birthDate">
+            <!-- Add more fields for Place of birth, Key family members, Notable events, etc. -->
+
+            <!-- Psychological Traits -->
+            <h3>Psychological Traits</h3>
+            <label for="personalityType">Personality type:</label>
+            <input type="text" id="personalityType" name="personalityType">
+            <!-- Add more fields for Personality traits, Temperament, Hobbies, etc. -->
+
+            <!-- Communication -->
+            <h3>Communication</h3>
+            <label for="languagesKnown">Languages known:</label>
+            <input type="text" id="languagesKnown" name="languagesKnown">
+            <!-- Add more fields for Preferred communication methods, Accent, Style of speech, etc. -->
+
+            <!-- Strengths, Weaknesses, and Abilities -->
+            <h3>Strengths, Weaknesses, and Abilities</h3>
+            <!-- Add fields for Physical strengths, Physical weaknesses, Intellectual strengths, etc. -->
+
+            <!-- Relationships -->
+            <h3>Relationships</h3>
+            <!-- Add fields for Partner(s), Parents/Guardians, Children, etc. -->
+
+            <!-- Character Growth -->
+            <h3>Character Growth</h3>
+            <!-- Add fields for Character archetype, Character arc, Core values, etc. -->
+        </div>
 
         <button id="createCharacterButton" class="create-character-button">Create Character</button>
 
@@ -37,14 +83,8 @@
             <input type="number" id="addPenaltyInput" name="addPenaltyInput" placeholder="Enter penalty value">
             <button id="addPenaltyButton">Add Penalty</button>
         </div>
-
-        <!-- Character sheet section -->
-        <div id="characterSheet" class="character-sheet">
-            <!-- Character sheet content will be added here -->
-        </div>
     </div>
 
     <script type="module" src="js/main.js"></script>
-    <script type="module" src="js/createCharacterButton.js"></script>
 </body>
 </html>
