@@ -3,88 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character Creator</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Game Project</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/attribute.css">
+    <link rel="stylesheet" href="assets/css/skills.css">
+    <link rel="stylesheet" href="assets/css/instance_creator.css">
+    <link rel="stylesheet" href="assets/css/villain_attributes.css">
 </head>
 <body>
     <div class="container">
-        <h1 class="header">Character Creator</h1>
-        
-        <form id="attributeForm" class="attribute-form">
-            <label for="strengthInput">Strength:</label>
-            <input type="number" id="strengthInput" name="strengthInput">
-            <br>
-            <label for="agilityInput">Agility:</label>
-            <input type="number" id="agilityInput" name="agilityInput">
-            <br>
-            <label for="intelligenceInput">Intelligence:</label>
-            <input type="number" id="intelligenceInput" name="intelligenceInput">
-            <br>
-            <label for="constitutionInput">Constitution:</label>
-            <input type="number" id="constitutionInput" name="constitutionInput">
-            <br>
-            <button type="submit">Update Attributes</button>
-        </form>
+        <header class="header">
+            <h1>Game Project</h1>
+            <nav class="navbar">
+                <a href="#">Home</a>
+                <a href="#">Characters</a>
+                <a href="#">Skills</a>
+                <a href="#">Combat</a>
+                <a href="#">Inventory</a>
+                <a href="#">Instance Manager</a>
+                <a href="#">Instance Creator</a>
+                <a href="#">Villain Attributes</a>
+            </nav>
+        </header>
 
-        <div id="characterDetails" class="character-details">
-            <h2>Character Details</h2>
-            
-            <!-- Demographics -->
-            <h3>Demographics</h3>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
-            <label for="age">Age:</label>
-            <input type="text" id="age" name="age">
-            <!-- Add more fields for Sex/Gender, Ethnicity, Occupation, etc. -->
+        <section class="character-attributes">
+            <!-- Character attributes form -->
+            <h2>Character Attributes</h2>
+            <form id="attributeForm" class="attribute-form">
+                <!-- Input fields for character attributes -->
+                <label for="strengthInput">Strength:</label>
+                <input type="number" id="strengthInput" name="strengthInput">
+                <br>
+                <!-- Repeat for other attributes -->
+                <button type="submit">Update Attributes</button>
+            </form>
+        </section>
 
-            <!-- Physical Appearance -->
-            <h3>Physical Appearance</h3>
-            <label for="eyeColor">Eye color:</label>
-            <input type="text" id="eyeColor" name="eyeColor">
-            <!-- Add more fields for Skin color, Hair color, Height, etc. -->
+        <section class="character-sheet">
+            <!-- Character sheet display -->
+            <h2>Character Sheet</h2>
+            <div id="characterSheet" class="character-details">
+                <!-- Placeholder for character details -->
+            </div>
+        </section>
 
-            <!-- History -->
-            <h3>History</h3>
-            <label for="birthDate">Birth date:</label>
-            <input type="text" id="birthDate" name="birthDate">
-            <!-- Add more fields for Place of birth, Key family members, Notable events, etc. -->
+        <section class="skills">
+            <!-- Skills display -->
+            <h2>Skills</h2>
+            <div id="skillsList" class="skills-list">
+                <!-- Placeholder for skills -->
+            </div>
+        </section>
 
-            <!-- Psychological Traits -->
-            <h3>Psychological Traits</h3>
-            <label for="personalityType">Personality type:</label>
-            <input type="text" id="personalityType" name="personalityType">
-            <!-- Add more fields for Personality traits, Temperament, Hobbies, etc. -->
+        <!-- Add more sections for other components as needed -->
 
-            <!-- Communication -->
-            <h3>Communication</h3>
-            <label for="languagesKnown">Languages known:</label>
-            <input type="text" id="languagesKnown" name="languagesKnown">
-            <!-- Add more fields for Preferred communication methods, Accent, Style of speech, etc. -->
-
-            <!-- Strengths, Weaknesses, and Abilities -->
-            <h3>Strengths, Weaknesses, and Abilities</h3>
-            <!-- Add fields for Physical strengths, Physical weaknesses, Intellectual strengths, etc. -->
-
-            <!-- Relationships -->
-            <h3>Relationships</h3>
-            <!-- Add fields for Partner(s), Parents/Guardians, Children, etc. -->
-
-            <!-- Character Growth -->
-            <h3>Character Growth</h3>
-            <!-- Add fields for Character archetype, Character arc, Core values, etc. -->
-        </div>
-
-        <button id="createCharacterButton" class="create-character-button">Create Character</button>
-
-        <!-- Instance Master controls -->
-        <div id="instanceMasterControls" class="instance-master-controls">
-            <h2>Instance Master Controls</h2>
-            <label for="addPenaltyInput">Add Penalty:</label>
-            <input type="number" id="addPenaltyInput" name="addPenaltyInput" placeholder="Enter penalty value">
-            <button id="addPenaltyButton">Add Penalty</button>
-        </div>
     </div>
 
-    <script type="module" src="js/main.js"></script>
+    <!-- JavaScript files -->
+    <script type="module" src="assets/js/attribute.js"></script>
+    <script type="module" src="assets/js/character_sheet.js"></script>
+    <script type="module" src="assets/js/createCharacterButton.js"></script>
+    <script type="module" src="assets/js/derivedStatistics.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+    <!-- Include additional JavaScript files for other components -->
+
 </body>
 </html>
