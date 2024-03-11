@@ -1,0 +1,17 @@
+/* character/skills.css */
+.skills {
+    margin-bottom: 20px;
+}
+
+.skills h3 {
+    margin-bottom: 10px;
+}
+
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills li {
+    margin-bottom: 5px;
+}

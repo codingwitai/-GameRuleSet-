@@ -1,0 +1,17 @@
+/* instanceCreator.css */
+.instance-creator {
+    margin-bottom: 20px;
+}
+
+.instance-creator button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.instance-creator button:hover {
+    background-color: #0056b3;
+}

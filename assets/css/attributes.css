@@ -1,0 +1,12 @@
+/* character/attributes.css */
+.attribute {
+    margin-bottom: 10px;
+}
+
+.attribute label {
+    font-weight: bold;
+}
+
+.attribute input[type="number"] {
+    width: 50px;
+}

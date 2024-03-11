@@ -1,0 +1,13 @@
+/* inventory.css */
+.inventory {
+    margin-bottom: 20px;
+}
+
+.inventory ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.inventory li {
+    margin-bottom: 5px;
+}

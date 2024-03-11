@@ -1,0 +1,13 @@
+/* villainAttributes.css */
+.villain-attributes {
+    margin-bottom: 20px;
+}
+
+.villain-attributes ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.villain-attributes li {
+    margin-bottom: 5px;
+}

@@ -1,0 +1,15 @@
+/* character/creation.css */
+#characterCreationForm {
+    margin-bottom: 20px;
+}
+
+#characterCreationForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#characterCreationForm input[type="text"],
+#characterCreationForm input[type="number"] {
+    width: 200px;
+    margin-bottom: 10px;
+}
