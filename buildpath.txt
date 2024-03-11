@@ -11,7 +11,7 @@ GameRuleSet/
 │   │   ├── skills.css           # Skills CSS file
 │   │   └── villain_attributes.css # Villain attributes CSS file
 │   └── js/                      # Folder for JavaScript files
-│       ├── attributes.js        # Attributes module
+│       ├── attributes.js         # Attributes module
 │       ├── derived_statistics.js# Derived statistics module
 │       ├── skills.js            # Skills module
 │       ├── specialties.js       # Specialties module

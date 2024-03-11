@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Sheet</title>
+    <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="character_sheet.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-4">
+
+                <h2>Ability Scores</h2>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Ability</th>
+                            <th>Score</th>
+                            <th>Modifier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Strength</td>
+                            <td><input type="number" value="10" id="strScore" onchange="updateModifiers()"></td>
+                            <td><input type="number" placeholder="0" id="strMod" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Dexterity</td>
+                            <td><input type="number" value="10" id="dexScore" onchange="updateModifiers()"></td>
+                            <td><input type="number" placeholder="0" id="dexMod" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Constitution</td>
+                            <td><input type="number" value="10" id="conScore" onchange="updateModifiers()"></td>
+                            <td><input type="number" placeholder="0" id="conMod" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Intelligence</td>
+                            <td><input type="number" value="10" id="intScore" onchange="updateModifiers()"></td>
+                            <td><input type="number" placeholder="0" id="intMod" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Wisdom</td>
+                            <td><input type="number" value="10" id="wisScore" onchange="updateModifiers()"></td>
+                            <td><input type="number" placeholder="0" id="wisMod" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Charisma</td>
+                            <td><input type="number" value="10" id="chaScore" onchange="updateModifiers()"></td>
+                            <td><input type="number" placeholder="0" id="chaMod" readonly></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col-4">
+
+                <h2>Player Level</h2>
+
+                <br>
+
+                <input type="number" id="playerLevel" min="1" max="20" value="1" onchange="playerLevelChange();">
+
+            </div>
+
+            <div class="col-4">
+
+                <h2>Proficiency Bonus</h2>
+
+                <br>
+
+                <input type="number" id="profBonus">
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <h2>Skills</h2>
+
+                <ul class="skill-list">
+                    <!-- Skills will be dynamically added here -->
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="skills.js"></script>
+    <script src="character_sheet.js"></script>
+</body>
+
+</html>
