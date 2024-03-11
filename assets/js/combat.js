@@ -1,39 +1,56 @@
-// Import necessary modules and resources
-
-// Define combat-related functions and logic
-const Combat = {
-    // Function to start a combat encounter
-    startCombat: function() {
-        // Initialize combatants, set up battlefield, etc.
-    },
-
-    // Function to manage turn-based flow of combat
-    manageTurns: function() {
-        // Determine turn order, resolve actions, etc.
-    },
-
-    // Function to handle combat actions and abilities
-    handleAction: function(action) {
-        // Process the specified action
-    },
-
-    // Function to resolve combat outcomes
-    resolveCombat: function() {
-        // Calculate damage, apply effects, update combat state, etc.
-    },
-
-    // Function to determine victory or defeat conditions
-    checkVictoryDefeat: function() {
-        // Check if victory or defeat conditions are met
-    },
-
-    // Function to update the user interface during combat
-    updateUI: function() {
-        // Update combatant stats, health bars, action menus, etc.
-    },
-
-    // Other combat-related functions as needed...
-};
-
-// Export the Combat module for use in other parts of the application
-export default Combat;
+class Character {
+    constructor(name, initiative, movement) {
+      this.name = name;
+      this.initiative = initiative;
+      this.movement = movement;
+    }
+  
+    act() {
+      console.log(`${this.name} is acting.`);
+      // Perform actions based on the character's initiative
+    }
+  
+    move(distance) {
+      if (distance > this.movement) {
+        console.log(`${this.name} cannot move that far in one turn.`);
+      } else {
+        console.log(`${this.name} moves ${distance} feet.`);
+        // Update character's position
+      }
+    }
+  }
+  
+  class Combat {
+    constructor(characters) {
+      this.characters = characters;
+    }
+  
+    resolveInitiative() {
+      this.characters.sort((a, b) => b.initiative - a.initiative);
+      console.log("Initiative order:");
+      this.characters.forEach((character, index) => {
+        console.log(`${index + 1}. ${character.name}`);
+      });
+    }
+  
+    startTurn() {
+      this.characters.forEach((character) => {
+        character.act();
+        // Reduce character's initiative for the turn
+        character.initiative -= 1;
+      });
+    }
+  }
+  
+  // Example usage
+  const characters = [
+    new Character("Warrior", 10, 30),
+    new Character("Rogue", 12, 40),
+    new Character("Mage", 8, 25),
+  ];
+  
+  const combat = new Combat(characters);
+  combat.resolveInitiative();
+  combat.startTurn();
+  
+  

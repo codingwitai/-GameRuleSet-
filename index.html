@@ -9,7 +9,8 @@
         #characterAttributesCSS,
         #updateAttributesCSS,
         #characterSheetCSS,
-        #skillsCSS {
+        #skillsCSS,
+        #combatMechanicsCSS {
             display: none; /* Hide by default */
         }
     </style>
@@ -24,6 +25,7 @@
             <li><a href="#" id="updateAttributesLink">Update Attributes</a></li>
             <li><a href="#" id="characterSheetLink">Character Sheet</a></li>
             <li><a href="#" id="skillsLink">Skills</a></li>
+            <li><a href="#" id="combatMechanicsLink">Combat Mechanics</a></li> <!-- Added combat mechanics link -->
             <!-- Add more navigation links as needed -->
         </ul>
     </nav>
@@ -49,6 +51,11 @@
         <p>Add your CSS content for skills here.</p>
     </div>
 
+    <div id="combatMechanicsCSS">
+        <h2>Combat Mechanics CSS</h2>
+        <p>Add your CSS content for combat mechanics here.</p>
+    </div>
+
     <!-- JavaScript to handle click events -->
     <script>
         // Get references to the links and sections
@@ -56,11 +63,13 @@
         const updateAttributesLink = document.getElementById('updateAttributesLink');
         const characterSheetLink = document.getElementById('characterSheetLink');
         const skillsLink = document.getElementById('skillsLink');
+        const combatMechanicsLink = document.getElementById('combatMechanicsLink'); // Added combat mechanics link
 
         const characterAttributesSection = document.getElementById('characterAttributesCSS');
         const updateAttributesSection = document.getElementById('updateAttributesCSS');
         const characterSheetSection = document.getElementById('characterSheetCSS');
         const skillsSection = document.getElementById('skillsCSS');
+        const combatMechanicsSection = document.getElementById('combatMechanicsCSS'); // Added combat mechanics section
 
         // Add click event listeners to the links
         characterAttributesLink.addEventListener('click', () => {
@@ -79,10 +88,20 @@
             scrollToSection(skillsSection);
         });
 
+        combatMechanicsLink.addEventListener('click', () => { // Added event listener for combat mechanics link
+            scrollToSection(combatMechanicsSection);
+        });
+
         // Function to scroll to a section
         function scrollToSection(section) {
             section.scrollIntoView({ behavior: 'smooth' });
         }
+    </script>
+
+    <!-- JavaScript for combat mechanics -->
+    <script>
+        // Add your combat mechanics JavaScript code here
+        // For example, you can define classes, functions, and variables related to combat mechanics
     </script>
 </body>
 </html>
