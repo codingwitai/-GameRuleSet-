@@ -7,28 +7,37 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Character Creator</h1>
-    
-    <form id="attributeForm">
-        <label for="strengthInput">Strength:</label>
-        <input type="number" id="strengthInput" name="strengthInput">
-        <br>
-        <label for="agilityInput">Agility:</label>
-        <input type="number" id="agilityInput" name="agilityInput">
-        <br>
-        <label for="intelligenceInput">Intelligence:</label>
-        <input type="number" id="intelligenceInput" name="intelligenceInput">
-        <br>
-        <label for="constitutionInput">Constitution:</label>
-        <input type="number" id="constitutionInput" name="constitutionInput">
-        <br>
-        <button type="submit">Update Attributes</button>
-    </form>
+    <div class="container">
+        <h1 class="header">Character Creator</h1>
+        
+        <form id="attributeForm" class="attribute-form">
+            <label for="strengthInput">Strength:</label>
+            <input type="number" id="strengthInput" name="strengthInput">
+            <br>
+            <label for="agilityInput">Agility:</label>
+            <input type="number" id="agilityInput" name="agilityInput">
+            <br>
+            <label for="intelligenceInput">Intelligence:</label>
+            <input type="number" id="intelligenceInput" name="intelligenceInput">
+            <br>
+            <label for="constitutionInput">Constitution:</label>
+            <input type="number" id="constitutionInput" name="constitutionInput">
+            <br>
+            <button type="submit">Update Attributes</button>
+        </form>
 
-    <h2>Character Details</h2>
-    <div id="characterDetails"></div>
+        <div id="characterDetails" class="character-details"></div>
 
-    <button id="createCharacterButton">Create Character</button>
+        <button id="createCharacterButton" class="create-character-button">Create Character</button>
+
+        <!-- Instance Master controls -->
+        <div id="instanceMasterControls" class="instance-master-controls">
+            <h2>Instance Master Controls</h2>
+            <label for="addPenaltyInput">Add Penalty:</label>
+            <input type="number" id="addPenaltyInput" name="addPenaltyInput" placeholder="Enter penalty value">
+            <button id="addPenaltyButton">Add Penalty</button>
+        </div>
+    </div>
 
     <script type="module" src="js/main.js"></script>
 </body>

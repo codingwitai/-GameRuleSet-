@@ -1,5 +1,6 @@
 // main.js
 
+// Import necessary modules
 import { Attribute } from './attribute.js';
 import { calculateDerivedStatistics } from './derivedStatistics.js';
 
@@ -81,10 +82,10 @@ function performSkillTest(skillValue, testType, targetValue) {
 // Function to create a character based on user inputs
 function createCharacter() {
     // Retrieve attribute values from user inputs
-    const strengthValue = parseInt(document.getElementById("strength").value);
-    const agilityValue = parseInt(document.getElementById("agility").value);
-    const intelligenceValue = parseInt(document.getElementById("intelligence").value);
-    const constitutionValue = parseInt(document.getElementById("constitution").value);
+    const strengthValue = parseInt(document.getElementById("strengthInput").value);
+    const agilityValue = parseInt(document.getElementById("agilityInput").value);
+    const intelligenceValue = parseInt(document.getElementById("intelligenceInput").value);
+    const constitutionValue = parseInt(document.getElementById("constitutionInput").value);
 
     // Create attribute objects
     const strength = new Attribute("Strength", strengthValue);
@@ -168,6 +169,15 @@ form.addEventListener("submit", function(event) {
 
     // Update displayed derived statistics (not shown here)
 });
+
+// Function to add penalty
+function addPenalty() {
+    const penaltyValue = parseInt(document.getElementById("addPenaltyInput").value);
+    // Perform actions to apply penalty (e.g., reduce attributes, skills, etc.)
+    console.log(`Penalty added: ${penaltyValue}`);
+}
+
+document.getElementById("addPenaltyButton").addEventListener("click", addPenalty);
 
 // Export the createCharacter function to make it accessible to other modules
 export { createCharacter };
