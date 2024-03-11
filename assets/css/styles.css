@@ -1,4 +1,6 @@
-/* General styles */
+/* main.css */
+
+/* Original general styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -10,13 +12,13 @@ body {
     width: 80%;
 }
 
-/* Header styles */
+/* Original header styles */
 .header {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Attribute form styles */
+/* Original attribute form styles */
 .attribute-form {
     width: 300px;
     margin: 0 auto;
@@ -48,7 +50,7 @@ body {
     cursor: pointer;
 }
 
-/* Character details styles */
+/* Original character details styles */
 .character-details {
     width: 300px;
     margin: 20px auto;
@@ -61,7 +63,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* Create character button styles */
+/* Original create character button styles */
 .create-character-button {
     display: block;
     margin: 20px auto;
@@ -74,5 +76,64 @@ body {
 }
 
 .create-character-button:hover {
+    background-color: #0056b3;
+}
+
+/* End of original styles */
+
+/* New styles from style.css */
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    color: #333;
+}
+
+/* Attribute styles */
+.attribute {
+    margin-bottom: 10px;
+}
+
+.attribute label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+}
+
+.attribute input {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Button styles */
+.button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
     background-color: #0056b3;
 }
