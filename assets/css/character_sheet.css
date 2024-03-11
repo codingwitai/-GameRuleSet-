@@ -1,0 +1,29 @@
+/* character_sheet.css */
+
+.character-details {
+    display: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.character-details h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.character-details .section {
+    margin-bottom: 20px;
+}
+
+.character-details h3 {
+    margin-top: 0;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.character-details p {
+    margin: 5px 0;
+}
